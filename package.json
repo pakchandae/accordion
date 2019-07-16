@@ -1,0 +1,34 @@
+{
+  "name": "accordion",
+  "version": "1.0.0",
+  "main": "gulpfile.babel.js",
+  "repository": "",
+  "author": "chandae pak",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.24.5",
+    "browserify": "^16.2.2",
+    "gsap": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-watch": "^5.0.0",
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^4.31.0",
+    "webpack-stream": "^5.2.1"
+    },
+    "babel": {
+      "presets": [
+        "es2015"
+      ]
+    }
+}
