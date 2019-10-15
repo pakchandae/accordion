@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "gulpfile.babel.js",
   "repository": "",
-  "author": "chandae pak",
+  "author": "pakchandae",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -30,5 +30,8 @@
       "presets": [
         "es2015"
       ]
+    },
+    "scripts": {
+      "start": "gulp"
     }
 }

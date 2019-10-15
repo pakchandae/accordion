@@ -12,22 +12,26 @@
 ## 使用言語
 
 * HTMLテンプレート: pug
-* CSSメタ言語: Sass (scss)
+* CSSメタ言語: scss
 * JavaScript: ES2015 (ECMAScript6)
 
 
 ## ファイル構成
 
-* `package.json`
-  * 使用パッケージの管理ファイル
 * `gulpfile.babel.js`
   * gulpのタスク定義
 * `public`
-  * 公開フォルダ
+  * build後のソースコード
 * `src`
-  * ビルド前の開発用ソースコード
+  * build前の開発用ソースコード
 
 
-## タスク
+## コマンド
 
-`gulp` コマンドでローカルサーバー立ち上げ＆各開発用ファイルをwatch、ビルドする
+```sh
+# node_modules install
+$ yarn install (or $ npm install)
+
+# develop
+$ npm start
+```

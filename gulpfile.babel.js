@@ -25,7 +25,7 @@ const config = {
     },
     webpack: {
         mode: 'production',
-        entry: path.resolve(__dirname, 'src/js/import.js'),
+        entry: path.resolve(__dirname, 'src/js/app.js'),
         output: {
             path: path.resolve(__dirname, 'public/assets/js'),
             filename: 'app.js'
