@@ -82,21 +82,21 @@ class Accordion{
     click(event){
         let $target = $($(event.currentTarget).attr(this.dataTarget)),
             initialHeight = $target.attr(this.dataInitialHeight),
-            outerHeight = $target.children().outerHeight(true),
-            height = 0;
+            height = this.getHeight($target.contents()),
+            h = 0;
         
         if ($target.hasClass(this.openClass)) {
-            height = initialHeight ? Number(initialHeight) : 0;
+            h = initialHeight ? Number(initialHeight) : 0;
             $target.removeClass(this.openClass);
         } else {
-            height = outerHeight;
+            h = height;
             $target.addClass(this.openClass);
         }
         
         this.setHeight({
             $target: $target,
             speed: this.speed,
-            height: height,
+            height: h,
         });
     }
     
@@ -106,14 +106,14 @@ class Accordion{
     resize(){
         this.$target.each((i, el) => {
             let $el = $(el),
-                outerHeight = $el.children().outerHeight(true);
+                h = this.getHeight($el.contents());
                 
             if (!$el.hasClass(this.openClass)) return;
             
             this.setHeight({
                 $target: $el,
                 speed: 0,
-                height: outerHeight,
+                height: h,
             });
         });
     }
@@ -127,7 +127,28 @@ class Accordion{
             s = param.speed,
             h = param.height;
             
-        $target.animate({ height: h }, s, this.ease);
+        $target.stop().animate({ height: h }, s, this.ease);
+    }   
+    
+    /**
+     * 対象要素の高さを取得
+     * @param {object} $el 対象要素
+     * @return {number} 対象要素の高さ
+     */
+    getHeight($el){
+        let h = 0;
+        
+        $el.each((i, el) => {
+            if ($(el).get(0).nodeType === Node.TEXT_NODE) {            
+                $(el).wrap('<span>');
+                h += $(el).parent().outerHeight(true);
+                $(el).unwrap('<span>');
+            } else {
+                h += $(el).outerHeight(true);
+            }
+        });
+        
+        return h;
     }   
 }
 
