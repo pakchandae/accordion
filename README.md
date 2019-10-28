@@ -30,8 +30,10 @@
 
 ```sh
 # node_modules install
-$ yarn install (or $ npm install)
+$ yarn install
+($ npm install)
 
 # develop
-$ npm start
+$ yarn start
+($ npm start)
 ```
